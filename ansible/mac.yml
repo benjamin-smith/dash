@@ -19,7 +19,7 @@
       homebrew: name=brew-cask state=latest
 
     - name: Install Virtualbox
-      homebrew_cask: name=virtualbox state=latest
+      homebrew_cask: name=virtualbox state=present
       environment:
         HOMEBREW_CASK_OPTS: --appdir=/Applications
 
