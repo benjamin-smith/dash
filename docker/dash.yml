@@ -5,6 +5,7 @@ nginx:
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
   restart: always
+
 dnsmasq:
   image: andyshinn/dnsmasq
   ports:
@@ -14,6 +15,7 @@ dnsmasq:
     - NET_ADMIN
   command: --address=/dev/192.168.99.100
   restart: always
+
 mysql:
   image: mysql:5.6
   environment:
@@ -22,3 +24,9 @@ mysql:
     - ~/docker-volumes/mysql-data:/var/lib/mysql:rw
   ports:
     - "3306:3306"
+
+mailhog:
+  image: mailhog/mailhog
+  ports:
+    - "1025:1025"
+    - "8025:8025"
