@@ -14,3 +14,11 @@ dnsmasq:
     - NET_ADMIN
   command: --address=/dev/192.168.99.100
   restart: always
+mysql:
+  image: mysql:5.6
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+  volumes:
+    - ~/docker-volumes/mysql-data:/var/lib/mysql:rw
+  ports:
+    - "3306:3306"
