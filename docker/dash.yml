@@ -4,6 +4,7 @@ nginx:
     - "80:80"
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
+    - ~/docker-vhost-configs:/etc/nginx/vhost.d:ro
   restart: always
 
 dnsmasq:
