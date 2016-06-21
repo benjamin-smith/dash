@@ -25,6 +25,7 @@ mysql:
     - MYSQL_ROOT_PASSWORD=root
   volumes:
     - ~/docker-volumes/mysql-data:/var/lib/mysql:rw
+  command: --character-set-server=utf8 --collation-server=utf8_unicode_ci --sql-mode=NO_ENGINE_SUBSTITUTION
   restart: always
 
 mailhog:
