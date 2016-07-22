@@ -10,11 +10,11 @@ nginx:
 dnsmasq:
   image: andyshinn/dnsmasq
   ports:
-    - "192.168.99.100:53:53/tcp"
-    - "192.168.99.100:53:53/udp"
+    - "127.0.0.1:53535:53/tcp"
+    - "127.0.0.1:53535:53/udp"
   cap_add:
     - NET_ADMIN
-  command: --address=/dev/192.168.99.100
+  command: --address=/dev/127.0.0.1
   restart: always
 
 mysql:
