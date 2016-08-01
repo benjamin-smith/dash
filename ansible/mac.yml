@@ -7,10 +7,10 @@
 
   tasks:
 
-    # - name: Check Sudo Password
-    #   command: ls
-    #   become: yes
-    #   become_method: sudo
+    - name: Check Sudo Password
+      command: ls
+      become: yes
+      become_method: sudo
 
     - name: Create resolver directory
       file: path=/etc/resolver state=directory mode=0755
@@ -26,7 +26,7 @@
       become: yes
       become_method: sudo
 
-    - name: Update PATH to support dev command (ZSH)
+    - name: Update PATH to support dev command (Zsh)
       lineinfile:
         dest: ~/.zshrc
         line: "source {{ dev_env_dir }}/ansible/mac_profile"
